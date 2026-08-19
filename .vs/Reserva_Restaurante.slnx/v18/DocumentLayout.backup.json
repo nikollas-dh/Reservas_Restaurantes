@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Projetos\\Reserva_Restaurante\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{413955BF-967E-4623-B344-B5288C7DE7D0}|Reserva_Restaurante\\Reserva_Restaurante.csproj|f:\\projetos\\reserva_restaurante\\reserva_restaurante\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{413955BF-967E-4623-B344-B5288C7DE7D0}|Reserva_Restaurante\\Reserva_Restaurante.csproj|solutionrelative:reserva_restaurante\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "F:\\Projetos\\Reserva_Restaurante\\Reserva_Restaurante\\Form1.cs",
+              "RelativeDocumentMoniker": "Reserva_Restaurante\\Form1.cs",
+              "ToolTip": "F:\\Projetos\\Reserva_Restaurante\\Reserva_Restaurante\\Form1.cs [Design]",
+              "RelativeToolTip": "Reserva_Restaurante\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T19:17:02.521Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
