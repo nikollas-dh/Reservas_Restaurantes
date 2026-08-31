@@ -144,6 +144,12 @@
     <Compile Include="Reservas.Designer.cs">
       <DependentUpon>Reservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Token.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Token.Designer.cs">
+      <DependentUpon>Token.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +174,9 @@
     <EmbeddedResource Include="Reservas.resx">
       <DependentUpon>Reservas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Token.resx">
+      <DependentUpon>Token.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -190,6 +199,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Categorias\Chinês.jpg" />
+    <Content Include="Categorias\Francês.jpg" />
+    <Content Include="Categorias\Italiano.jpg" />
+    <Content Include="Categorias\Japonês.jpg" />
+    <Content Include="Categorias\Mexicano.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -200,6 +214,25 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Música\musica.mp3" />
+    <Content Include="pratos\Boeuf Bourguignon.jpg" />
+    <Content Include="pratos\Burrito de Frango.jpg" />
+    <Content Include="pratos\Creme Brûlée.jpg" />
+    <Content Include="pratos\Feijoada.jpg" />
+    <Content Include="pratos\Frango Xadrez.jpg" />
+    <Content Include="pratos\Guacamole Fresco.jpg" />
+    <Content Include="pratos\Moqueca de Peixe.jpg" />
+    <Content Include="pratos\Pizza Margherita.jpg" />
+    <Content Include="pratos\Pão de Queijo.jpg" />
+    <Content Include="pratos\Quiche Lorraine.jpg" />
+    <Content Include="pratos\Risoto de Funghi.jpg" />
+    <Content Include="pratos\Rolinho Primavera.jpg" />
+    <Content Include="pratos\Sashimi de Atum.jpg" />
+    <Content Include="pratos\Spaghetti alla Carbonara.jpg" />
+    <Content Include="pratos\Sushi de Salmão.jpg" />
+    <Content Include="pratos\Tacos de Carne Asada.jpg" />
+    <Content Include="pratos\Tempurá de Legumes.jpg" />
+    <Content Include="pratos\Yakissoba de Legumes.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

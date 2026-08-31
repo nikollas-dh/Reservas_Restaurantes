@@ -10,24 +10,18 @@ using System.Windows.Forms;
 
 namespace Reserva_Restaurante
 {
-    public partial class Form1 : Form
+    public partial class Token : Form
     {
-        public Form1()
+        string token;
+        public Token(string tokenGerado)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-
+            token = tokenGerado;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Token_Load(object sender, EventArgs e)
         {
-            new login().Show();
-            this.Hide();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            textBox1.Text = token;
         }
     }
 }
