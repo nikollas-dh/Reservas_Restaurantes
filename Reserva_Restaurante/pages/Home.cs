@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Reserva_Restaurante
 {
@@ -15,15 +17,27 @@ namespace Reserva_Restaurante
     {
         Pessoas us;
         dbReservaRestauranteEntities ct = new dbReservaRestauranteEntities();
+        WindowsMediaPlayer audio = new WindowsMediaPlayer();
         public Home(Models.Pessoas usuarioAutenticado)
         {
             InitializeComponent();
             us = usuarioAutenticado;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
             CarregarRestaurantes();
+
+            string caminhoRelativo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Musica\musica.mp3");
+            string caminhoAbsoluto = Path.GetFullPath(caminhoRelativo);
+
+            if (File.Exists(caminhoAbsoluto))
+            {
+                audio.URL = caminhoAbsoluto;
+                audio.settings.setMode("loop", true);
+                audio.controls.play();
+            }
         }
 
         private void CarregarRestaurantes(string filtroNome = "")

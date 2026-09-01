@@ -118,7 +118,7 @@
             this.textBox2.Location = new System.Drawing.Point(694, 164);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(45, 44);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.txtToken_TextChanged);
             // 
             // textBox1
@@ -128,7 +128,7 @@
             this.textBox1.Location = new System.Drawing.Point(634, 164);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(45, 44);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.txtToken_TextChanged);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtToken_KeyDown);
             // 
@@ -157,7 +157,7 @@
             this.textBox4.Location = new System.Drawing.Point(815, 164);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(45, 44);
-            this.textBox4.TabIndex = 3;
+            this.textBox4.TabIndex = 4;
             this.textBox4.TextChanged += new System.EventHandler(this.txtToken_TextChanged);
             // 
             // textBox5
@@ -166,7 +166,7 @@
             this.textBox5.Location = new System.Drawing.Point(878, 164);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(45, 44);
-            this.textBox5.TabIndex = 3;
+            this.textBox5.TabIndex = 5;
             this.textBox5.TextChanged += new System.EventHandler(this.txtToken_TextChanged);
             // 
             // login
