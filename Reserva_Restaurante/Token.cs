@@ -23,5 +23,11 @@ namespace Reserva_Restaurante
         {
             textBox1.Text = token;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new login().Show();
+            this.Close();
+        }
     }
 }

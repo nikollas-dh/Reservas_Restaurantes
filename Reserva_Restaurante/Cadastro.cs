@@ -34,23 +34,27 @@ namespace Reserva_Restaurante
         private void button1_Click(object sender, EventArgs e)
         {
 
+            if (!validarTelefone(textBox2))
+            {
+                MessageBox.Show("Telefone inválido");
+                return;
+            }
+
+            if (!validarEmail(textBox3))
+            {
+                MessageBox.Show("Por favor, informe um e-mail válido.");
+                return;
+            }
+
             if (!validarCpf(textBox5)) 
             {
                 MessageBox.Show("CPF inválido");
                 return;
             }
 
-            if (!validarTelefone(textBox2)) 
-            {
-                MessageBox.Show("Telefone inválido");
-                return;
-            }
+           
 
-            if (!validarEmail(textBox3)) 
-            {
-                MessageBox.Show("Por favor, informe um e-mail válido.");
-                return;
-            }
+           
             if (!checkBox1.Checked)
             {
                 MessageBox.Show("Para prosseguir com a criação é necessário aceitar os termos");
@@ -59,30 +63,42 @@ namespace Reserva_Restaurante
 
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
 
-            Cidades cidade = new Cidades();
-            cidade.Nome = textBox4.Text;
-            ct.Cidades.Add(cidade);
-            ct.SaveChanges();
 
-            Enderecos enderecos = new Enderecos();
-            enderecos.IdCidade = cidade.ID;
-            enderecos.Cep = textBox7.Text;
-            ct.Enderecos.Add(enderecos);
-            ct.SaveChanges();
+            try
+            {
+                Cidades cidade = new Cidades();
+                cidade.Nome = textBox4.Text;
+                ct.Cidades.Add(cidade);
+                ct.SaveChanges();
 
-            Pessoas us = new Pessoas();
-            us.Nome = textBox1.Text;
-            us.Telefone = textBox2.Text;
-            us.Email = textBox3.Text;
-            us.CPF = textBox5.Text;
-            us.Foto = ms.ToArray();
-            us.IdEndereco= enderecos.ID;
+                Enderecos enderecos = new Enderecos();
+                enderecos.IdCidade = cidade.ID;
+                enderecos.Cep = textBox7.Text;
+                ct.Enderecos.Add(enderecos);
+                ct.SaveChanges();
 
-            ct.Pessoas.Add(us);
-            ct.SaveChanges();
+                Pessoas us = new Pessoas();
+                us.Nome = textBox1.Text;
+                us.Telefone = textBox2.Text;
+                us.Email = textBox3.Text;
+                us.CPF = textBox5.Text;
+                us.Foto = ms.ToArray();
+                us.IdEndereco = enderecos.ID;
 
-            string tokenGerado = GerarTokenUnico(us.ID, us.CPF);
-            new Token(tokenGerado).Show();
+                ct.Pessoas.Add(us);
+                ct.SaveChanges();
+
+                string tokenGerado = GerarTokenUnico(us.ID, us.CPF);
+                MessageBox.Show("Usuário cadastrado com sucesso");
+                new Token(tokenGerado).Show();
+                this.Close();
+            }
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message);
+                return;
+            
+            }
         }
 
         private string GerarTokenUnico(int idPessoa, string cpf)
@@ -112,21 +128,27 @@ namespace Reserva_Restaurante
 
         private bool validarCpf(TextBox textBox5)
         {
-            var padrao = $"{11}^";
-            if (Regex.IsMatch(textBox5.Text,padrao))   
-            { 
+            var padrao = @"^\d{11}$";
+            if (Regex.IsMatch(textBox5.Text, padrao))
+            {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
         private bool validarTelefone(TextBox textBox2)
         {
-            var padrao = $"{11}^";
-            if (Regex.IsMatch(textBox2.Text,padrao))   
-            { 
+            var padrao = @"^\d{11}$";
+            if (Regex.IsMatch(textBox2.Text, padrao))
+            {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
      

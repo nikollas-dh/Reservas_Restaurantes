@@ -17,3 +17,4 @@ F:\Projetos\Reservas_Restaurantes\Reserva_Restaurante\obj\Debug\Reserva_Restaura
 F:\Projetos\Reservas_Restaurantes\Reserva_Restaurante\obj\Debug\Reserva_.FA571328.Up2Date
 F:\Projetos\Reservas_Restaurantes\Reserva_Restaurante\obj\Debug\Reserva_Restaurante.exe
 F:\Projetos\Reservas_Restaurantes\Reserva_Restaurante\obj\Debug\Reserva_Restaurante.pdb
+F:\Projetos\Reservas_Restaurantes\Reserva_Restaurante\obj\Debug\Reserva_Restaurante.Token.resources
