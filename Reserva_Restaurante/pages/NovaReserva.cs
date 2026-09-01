@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Reserva_Restaurante
 {
-    public partial class Pesquisa : Form
+    public partial class NovaReserva : Form
     {
-        public Pesquisa()
+        public NovaReserva()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

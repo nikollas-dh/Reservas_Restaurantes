@@ -118,6 +118,7 @@ namespace Reserva_Restaurante
             if (usuarioAutenticado != null)
             {
                 MessageBox.Show($"Bem-vindo(a), {usuarioAutenticado.Nome}!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new Home(usuarioAutenticado).Show();
 
                
             }

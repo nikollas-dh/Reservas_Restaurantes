@@ -66,16 +66,33 @@ namespace Reserva_Restaurante
 
             try
             {
-                Cidades cidade = new Cidades();
-                cidade.Nome = textBox4.Text;
-                ct.Cidades.Add(cidade);
-                ct.SaveChanges();
 
-                Enderecos enderecos = new Enderecos();
-                enderecos.IdCidade = cidade.ID;
-                enderecos.Cep = textBox7.Text;
-                ct.Enderecos.Add(enderecos);
-                ct.SaveChanges();
+                var cidade = ct.Cidades.FirstOrDefault(o => o.Nome == textBox4.Text);
+                var endereco = ct.Enderecos.FirstOrDefault(o => o.Cep== textBox7.Text);
+
+
+                if (cidade == null) 
+                {
+                    cidade = new Cidades();
+                    int proximoIdCidade = ct.Cidades.Any() ? ct.Cidades.Max(c => c.ID) + 1 : 1;
+                    cidade.ID = proximoIdCidade;
+                    cidade.Nome = textBox4.Text;
+                    ct.Cidades.Add(cidade);
+                    ct.SaveChanges();
+                }
+
+                if(endereco == null) 
+                {
+                    endereco = new Enderecos();
+                    int proximoIdEndereco = ct.Enderecos.Any() ? ct.Enderecos.Max(o => o.ID) + 1 : 1;
+                    endereco.ID = proximoIdEndereco;
+                    endereco.IdCidade = cidade.ID;
+                    endereco.Cep = textBox7.Text;
+
+                    ct.Enderecos.Add(endereco);
+                    ct.SaveChanges();
+                }
+              
 
                 Pessoas us = new Pessoas();
                 us.Nome = textBox1.Text;
@@ -83,7 +100,7 @@ namespace Reserva_Restaurante
                 us.Email = textBox3.Text;
                 us.CPF = textBox5.Text;
                 us.Foto = ms.ToArray();
-                us.IdEndereco = enderecos.ID;
+                us.IdEndereco = endereco.ID;
 
                 ct.Pessoas.Add(us);
                 ct.SaveChanges();
@@ -94,10 +111,16 @@ namespace Reserva_Restaurante
                 this.Close();
             }
             catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message);
+            {
+                Exception erroReal = ex;
+                while (erroReal.InnerException != null)
+                {
+                    erroReal = erroReal.InnerException;
+                }
+
+                MessageBox.Show($"Erro do Banco: {erroReal.Message}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            
+
             }
         }
 
