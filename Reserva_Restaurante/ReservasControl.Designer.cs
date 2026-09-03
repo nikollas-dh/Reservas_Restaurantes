@@ -65,6 +65,7 @@
             this.lblStatus.Size = new System.Drawing.Size(72, 20);
             this.lblStatus.TabIndex = 0;
             this.lblStatus.Text = "STATUS";
+            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
             // 
             // dateTimePicker1
             // 

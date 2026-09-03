@@ -142,6 +142,12 @@
     <Compile Include="Models\Restaurantes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="pages\NovaAvaliacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\NovaAvaliacao.Designer.cs">
+      <DependentUpon>NovaAvaliacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\NovaReserva.cs">
       <SubType>Form</SubType>
     </Compile>

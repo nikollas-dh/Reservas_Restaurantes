@@ -1,4 +1,5 @@
 ﻿using Reserva_Restaurante.Models;
+using Reserva_Restaurante.pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,8 @@ namespace Reserva_Restaurante
 {
     public partial class ReservasControl : UserControl
     {
-
+        dbReservaRestauranteEntities ct = new dbReservaRestauranteEntities();
+        Reservas reservaAtual;
         public ReservasControl()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace Reserva_Restaurante
 
         public void PreencherDados(Pessoas usuario, Restaurantes restaurante, Reservas reserva, int posicao)
         {
-            
+            reservaAtual = reserva;
             label1.Text = restaurante.Nome;
             dateTimePicker1.Value = (DateTime)reserva.Data;
             lblPosicao.Text = posicao.ToString();
@@ -53,6 +55,23 @@ namespace Reserva_Restaurante
         private void ReservasControl_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+            if(lblStatus.Text == "Cancelar") 
+            {
+               var item = ct.Reservas.Find(reservaAtual.ID);
+                ct.Reservas.Remove(item);
+                ct.SaveChanges();
+                MessageBox.Show("Reserva cancelada!");
+                this.Hide();
+                
+            }
+            else if (lblStatus.Text == "Avaliar") 
+            {
+                new NovaAvaliacao().Show();
+            }
         }
     }
 }
