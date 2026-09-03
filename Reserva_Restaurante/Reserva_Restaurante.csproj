@@ -162,6 +162,12 @@
     <Compile Include="pages\Token.Designer.cs">
       <DependentUpon>Token.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservasControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReservasControl.Designer.cs">
+      <DependentUpon>ReservasControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MinhasReservas.resx">
       <DependentUpon>MinhasReservas.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Token.resx">
       <DependentUpon>Token.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservasControl.resx">
+      <DependentUpon>ReservasControl.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

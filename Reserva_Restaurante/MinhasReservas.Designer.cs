@@ -33,9 +33,10 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(158, 57);
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(104, 62);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(899, 502);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 674);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // MinhasReservas
@@ -46,6 +47,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "MinhasReservas";
             this.Text = "MinhasReservas";
+            this.Load += new System.EventHandler(this.MinhasReservas_Load);
             this.ResumeLayout(false);
 
         }
