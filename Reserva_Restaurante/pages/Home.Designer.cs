@@ -43,13 +43,14 @@
             this.label1.Size = new System.Drawing.Size(154, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Minhas Reservas";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(95, 109);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(193, 110);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1088, 579);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(840, 579);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // textBox1

@@ -51,5 +51,10 @@ namespace Reserva_Restaurante
                 flowLayoutPanel1.Controls.Add(card);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            new MinhasReservas(us).Show();
+        }
     }
 }

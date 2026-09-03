@@ -15,6 +15,8 @@ namespace Reserva_Restaurante
     public partial class ItemRestaurante : UserControl
     {
         public string NomeRestaurante { get; private set; }
+        public int  IdUsuario { get; private set; }
+        public int  IdRestaurante{ get; private set; }
         public ItemRestaurante()
         {
             InitializeComponent();
@@ -24,6 +26,8 @@ namespace Reserva_Restaurante
         {
             label1.Text = restaurante.Nome;
             label2.Text = restaurante.Descricao;
+            IdUsuario = usuario.ID;
+            IdRestaurante = restaurante.ID;
            
             string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $@"..\..\restaurantes\{restaurante.Nome}.jpg");
 
@@ -38,7 +42,7 @@ namespace Reserva_Restaurante
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            new NovaReserva(IdUsuario,IdRestaurante).Show();
         }
     }
 }

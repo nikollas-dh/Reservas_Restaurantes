@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MinhasReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MinhasReservas.Designer.cs">
+      <DependentUpon>MinhasReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <Compile Include="pages\Token.Designer.cs">
       <DependentUpon>Token.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MinhasReservas.resx">
+      <DependentUpon>MinhasReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
