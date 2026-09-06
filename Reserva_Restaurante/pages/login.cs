@@ -99,40 +99,19 @@ namespace Reserva_Restaurante
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string tokenDigitado = ObterTokenCompleto();
-
-            List<Pessoas> listaPessoas = ct.Pessoas.ToList();
-            Pessoas usuarioAutenticado = null;
-
-            foreach (var pessoa in listaPessoas)
-            {
-                string tokenCalculado = GerarTokenUnico(pessoa.ID, pessoa.CPF);
-
-                if (tokenCalculado == tokenDigitado)
-                {
-                    usuarioAutenticado = pessoa;
-                    break; 
-                }
-            }
-
-            if (usuarioAutenticado != null)
-            {
-                MessageBox.Show($"Bem-vindo(a), {usuarioAutenticado.Nome}!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new Home(usuarioAutenticado).Show();
-
-               
-            }
-            else
-            {
-                MessageBox.Show("Token de acesso inválido ou não encontrado.", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                textBox1.Clear(); 
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-
-                textBox1.Focus();
+            string tokenDigitado = ObterTokenCompleto(); 
+            Pessoas usuarioAutenticado = ct.Pessoas.ToList().FirstOrDefault(pessoa => GerarTokenUnico(pessoa.ID, pessoa.CPF) == tokenDigitado); 
+            if (usuarioAutenticado != null) 
+            { 
+                MessageBox.Show($"Bem-vindo(a), {usuarioAutenticado.Nome}!", 
+                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                new Home(usuarioAutenticado).Show(); 
+            } 
+            else 
+            { 
+                MessageBox.Show("Token inválido!", 
+                    "Erro", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error); 
             }
         }
 

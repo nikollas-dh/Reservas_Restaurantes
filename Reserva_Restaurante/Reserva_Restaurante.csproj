@@ -58,10 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MinhasReservas.cs">
+    <Compile Include="pages\MinhasReservas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MinhasReservas.Designer.cs">
+    <Compile Include="pages\MinhasReservas.Designer.cs">
       <DependentUpon>MinhasReservas.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\Cadastro.cs">
@@ -174,7 +174,7 @@
     <Compile Include="ReservasControl.Designer.cs">
       <DependentUpon>ReservasControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MinhasReservas.resx">
+    <EmbeddedResource Include="pages\MinhasReservas.resx">
       <DependentUpon>MinhasReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Cadastro.resx">
@@ -188,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\NovaAvaliacao.resx">
+      <DependentUpon>NovaAvaliacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\NovaReserva.resx">
       <DependentUpon>NovaReserva.cs</DependentUpon>

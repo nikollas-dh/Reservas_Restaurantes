@@ -37,6 +37,7 @@ namespace Reserva_Restaurante
                 card.PreencherDados(us, reserva.Restaurantes, reserva,contador);
 
                 flowLayoutPanel1.Controls.Add(card);
+                
                 contador++;
             }
         }

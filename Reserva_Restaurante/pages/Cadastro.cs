@@ -61,7 +61,6 @@ namespace Reserva_Restaurante
                 return;
             }
 
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
 
 
             try
@@ -92,7 +91,9 @@ namespace Reserva_Restaurante
                     ct.Enderecos.Add(endereco);
                     ct.SaveChanges();
                 }
-              
+
+                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+
 
                 Pessoas us = new Pessoas();
                 us.Nome = textBox1.Text;
@@ -126,14 +127,12 @@ namespace Reserva_Restaurante
 
         private string GerarTokenUnico(int idPessoa, string cpf)
         {
-            string baseTexto = $"{idPessoa}-{cpf}-ReservaRestaurante2026";
+            var texto = $"{idPessoa}-{cpf}";
 
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(baseTexto));
-                int numero = Math.Abs(BitConverter.ToInt32(bytes, 0));
-                return ((numero % 90000) + 10000).ToString();
-            }
+            var sha = SHA256.Create();
+            var hash = sha.ComputeHash(Encoding.UTF8.GetBytes(texto));
+
+            return ((Math.Abs(BitConverter.ToInt32(hash, 0)) % 90000) + 10000).ToString();
         }
 
         private bool validarEmail(TextBox textBox4)
